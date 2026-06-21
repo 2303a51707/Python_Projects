@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: #222;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(34, 34, 34, 0.95);
+      backdrop-filter: blur(5px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .logo span {
+      color: #ff6f61;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: #ff6f61;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: url("https://source.unsplash.com/1600x900/?blog,writing") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #ff3b2e;
+    }
+
+    /* Blogs Section */
+    .blogs {
+      padding: 80px 80px;
+      background: #f9f9f9;
+    }
+    .blogs h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+    .blog-content h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .blog-content p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    .read-more {
+      text-decoration: none;
+      color: #ff6f61;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 30px;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+      }
+      .blogs {
+        padding: 50px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">My<span>Blog</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Blog</h1>
+      <p>Explore articles on tech, lifestyle, and creativity.</p>
+      <a href="#blogs" class="btn">Read Articles</a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blogs" id="blogs">
+    <h2>Latest Posts</h2>
+    <div class="blog-container">
+      <div class="blog-card">
+        <img src="https://source.unsplash.com/600x400/?technology" alt="Blog 1">
+        <div class="blog-content">
+          <h3>Embracing AI: The Future of Tech</h3>
+          <p>Artificial intelligence is transforming industries faster than ever before...</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://source.unsplash.com/600x400/?nature" alt="Blog 2">
+        <div class="blog-content">
+          <h3>Finding Peace in Nature</h3>
+          <p>Discover how reconnecting with nature can improve your mental well-being...</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://source.unsplash.com/600x400/?coding" alt="Blog 3">
+        <div class="blog-content">
+          <h3>How to Start Coding from Scratch</h3>
+          <p>Getting started with programming can be overwhelming—here’s a guide to help...</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MyBlog. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Change navbar style on scroll
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

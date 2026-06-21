@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Age and Gender with Your Name</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.8s ease;
+        }
+
+        /* Add simple animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card style (optional) */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 60px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Text */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.2rem; }
+            .card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Hey <span style="color:#ffd700;">{{pname.title()}}</span> 👋</h1>
+        <h2>I think you are <span style="color:#90ee90;">{{gender}}</span></h2>
+        <h3>And maybe <span style="color:#ffa07a;">{{age}}</span> years old</h3>
+    </div>
+</body>
+</html>
